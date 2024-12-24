@@ -1,0 +1,9 @@
+\begin{feynhand}
+  \node[dot] (v1);
+
+  \propag[glu] (v1) to (1,-1);
+  \propag[glu] (v1) to (1,1);
+  \propag[glu] (v1) to (-1,1);
+  \propag[glu] (v1) to (-1,-1);
+\end{feynhand}
+

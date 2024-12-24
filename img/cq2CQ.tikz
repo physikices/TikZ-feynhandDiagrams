@@ -1,0 +1,14 @@
+\begin{feynhand}
+  \vertex[dot] (v1) {};
+  \node[dot] (v2) [below=2cm of v1] {};
+  \node (c) [above left=1.3cm of v1] {$c$};
+  \node (c_bar) [above right=1.3cm of v1] {$\bar{c}$};
+  \node (q) [below left=1.3cm of v2] {$q$};
+  \node (q_bar) [below right=1.3cm of v2] {$\bar{q}$};
+
+  \propag[glu] (v1) to (v2);
+  \propag[antfer] (c) to (v1);
+  \propag[fer] (c_bar) to (v1);
+  \propag[fer] (q) to (v2);
+  \propag[antfer] (q_bar) to (v2);
+\end{feynhand}

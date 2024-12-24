@@ -1,0 +1,34 @@
+\begin{feynhand}
+  \node (root) at (0,0) {$B(p_{2})$};
+
+  \vertex[NWblob] (blob1) [below right = .0cm and 1.5cm of root] {};
+  \vertex[NWblob] (blob2) [below = 2cm of blob1] {};
+
+  \node (pivot1) [below left = 0.1cm and 1.5cm of blob2] {$A(p_{1})$};
+  \node (pivot2) [right = 4cm of root]{$X$};
+  \node (pivot3) [right = 4cm of pivot1]{$X$};
+
+  \vertex[dot] (v1) [below right = 1.1cm of blob1] {};
+  \vertex[dot] (v2) [below = .5cm of v1] {};
+
+  \node (a) [right = 1.3cm of v1] {};
+  \node (b) [right = 1.3cm of v2] {};
+  \node (c) [above right = .8cm of a] {};
+  \node (d) [below right = .8cm of b] {$J/\psi$};
+
+  \propag[glu] (blob1) to (v1);
+  \propag[glu] (blob2) to (v2);
+
+  \propag[fer] (v1) to [edge label = $c$] (a);
+  \propag[antfer] (v2) to [edge label' = $\bar{c}$] (b);
+  \propag[fer] (v2) to (v1);
+
+  \propag[fer] (root) to (blob1);
+  \propag[fer] (pivot1) to (blob2);
+  \propag[fer] (blob1) to (pivot2);
+  \propag[fer] (blob2) to (pivot3);
+  \propag[glu] (a) to (c);
+  \propag[fer] (b) to (d); 
+
+  \filldraw[fill=black!50!white] (4.8, -1.7) circle [radius=14pt];
+\end{feynhand}
