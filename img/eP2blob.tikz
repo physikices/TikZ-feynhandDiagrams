@@ -1,0 +1,53 @@
+\begin{feynhand}
+  \node (root) at (0,0) {};
+
+  \begin{scope}[on background layer]
+    \node[dot] (dot1) [below = .05cm of root] {};
+
+    \node[dot] (dot2) [below = 2.0cm of dot1] {};
+    \node[dot] (dot3) [below = .05cm of dot2] {};
+    \node[dot] (dot4) [below = .05cm of dot3] {};
+
+
+    \node[] (ddot1) [above left = .5 and 2 of dot1] {};
+
+    \node[] (ddot2) [below left = .5 and 2 of dot2] {};
+    \node[] (ddot3) [below left = .5 and 2 of dot3] {};
+    \node[] (ddot4) [below left = .5 and 2 of dot4] {};
+
+    \node[] (ddot5) [above right = .5 and 2.5 of dot1] {};
+    \node[] (ddot6) [below right = .5 and 2.5 of dot3] {};
+
+
+    \node[dot] (middle1) [below right= 1cm of dot1] {};
+    \node[dot] (middle2) [above right= 1cm of dot3] {};
+    \node[dot] (pivot1) [right = 2cm of middle1] {};
+    \node[dot] (pivot2) [right = 2cm of middle2] {};
+    \node[dot] (pivot) [below=.34cm of pivot1] {};
+
+    \node[] (ddot7) [above right = of pivot1] {};
+    \node[] (ddot8) [below right = of pivot2] {};
+
+    \propag[fer] (ddot1) to (dot1);
+    \propag[fer] (ddot2) to (dot2);
+    \propag[fer] (ddot3) to (dot3);
+    \propag[fer] (ddot4) to (dot4);
+
+    \propag[pho] (dot1) to (middle1);
+    \propag[glu] (dot3) to (middle2);
+    \propag[fer] (middle1) to (pivot1);
+    \propag[antfer] (middle2) to (pivot2);
+    \propag[antfer] (middle1) to (middle2);
+
+    \propag[fer] (dot1) to (ddot5);
+    \propag[fer] (dot3) to (ddot6);
+    
+    \propag[glu] (pivot1) to (ddot7);
+    \propag[fer] (pivot2) to (ddot8);
+  \end{scope}
+
+  \vertex[grayblob] (blob1) at (dot3) {};
+
+  \filldraw[fill=black!30!white] to (pivot) circle [radius=.8cm];
+  \filldraw[fill=red!30!white] to (dot1) circle [radius=.2cm];
+\end{feynhand}

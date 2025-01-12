@@ -1,0 +1,34 @@
+\begin{feynhand}
+  \node (root) at (0,0) {};
+  \begin{scope}[on background layer]
+    \vertex[dot] (vert1) at (root) {};
+    \vertex[dot] (vert2) [below = 2 of vert1] {};
+
+    \vertex[dot](vert3) [above right = .5 and 3 of vert1] {};
+    \vertex[dot](vert4) [below = 2 of vert3] {};
+    \vertex[dot](vert5) [below left = .37 and 2.33 of vert3]{};
+    \vertex[dot](vert6) [below left = .37 and 2.33 of vert4]{};
+
+    \node(dot1) [above left = of vert1] {};
+    \node(dot2) [below left = of vert2] {};
+    \node(pivot) [below = 1 of vert3] {};
+    \node(dot3) [below right = of vert6] {};
+    
+    \vertex[dot] (split) [left = 1 of pivot] {};
+    \vertex[dot] (splitup) [above = .5 of pivot] {};
+    \vertex[dot] (splitdown) [below = .3 of pivot] {};
+
+    \propag[pho] (dot1) to (vert1);
+    \propag[glu] (dot2) to (vert2);
+    \propag[antfer] (vert1) to (vert2);
+    \propag[fer] (vert1) to (vert3);
+    \propag[antfer] (vert2) to (vert4);
+    \propag[glu] (vert5) to [out=270, in=180, looseness=1.2] (split);
+    \propag[fer] (split) to (splitup);
+    \propag[antfer] (split) to (splitdown);
+    \propag[glu] (vert6) to (dot3);
+  \end{scope}
+  
+  \filldraw[fill=blue!30!white] to (pivot) ellipse (.3cm and 2cm);
+\end{feynhand}
+
