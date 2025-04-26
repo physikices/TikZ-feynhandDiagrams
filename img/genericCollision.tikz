@@ -1,0 +1,18 @@
+\begin{feynhand}
+  \node[dot] (center) at (0,0) {};
+  \vertex[dot] (v1) [above=.5cm of center] {};
+  \vertex[dot] (v2) [below=.5cm of center] {};
+
+  \node (dot1) [above left = 3 of v1] {$k(E,\va{k})$};
+  \node (dot2) [above right = 3 of v1] {$k^{\prime}(E^{\prime},\va{k}^{\prime})$};
+  \node (dot3) [below left = 3 of v2] {$p(E_{p},\va{p})$};
+  \node (dot4) [below right = 3 of v2] {$p^{\prime}(E^{\prime}_{p^{\prime}},\va{p}^{\prime})$};
+
+  
+  \propag[fer] (dot1) to [edge label =$m$] (v1);
+  \propag[fer] (v1) to [edge label =$m^{\prime}$] (dot2);
+  \propag[fer] (dot3) to [edge label =$M$] (v2);
+  \propag[fer] (v2) to [edge label =$M^{\prime}$] (dot4);
+  \filldraw[fill=black!30!white] to (0,0) ellipse (.8cm and 1.5cm);
+\end{feynhand}
+
