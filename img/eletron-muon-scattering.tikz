@@ -1,0 +1,17 @@
+% --------------------------------------------- %
+% electron-muon scattering
+% --------------------------------------------- %
+\begin{feynhand}
+  \vertex[dot] (v1) {};
+  \node[dot] (v2) [below=2cm of v1] {};
+  \node (e_in) [above left=1.3cm of v1] {$e^{-}(k)$};
+  \node (e_out) [above right=1.3cm of v1] {$e^{-}(k^{\prime})$};
+  \node (m_in) [below left=1.3cm of v2] {$\mu^{-}(p)$};
+  \node (m_out) [below right=1.3cm of v2] {$\mu^{-}(p^{\prime})$};
+
+  \propag[pho] (v1) to [edge label =$\gamma(q)$] (v2);
+  \propag[fer] (e_in) to (v1);
+  \propag[antfer] (e_out) to (v1);
+  \propag[fer] (m_in) to (v2);
+  \propag[antfer] (m_out) to (v2);
+\end{feynhand}
