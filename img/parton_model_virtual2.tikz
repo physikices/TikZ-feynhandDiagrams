@@ -1,0 +1,12 @@
+\begin{feynhand}
+  \setlength{\feynhanddotsize}{4pt}
+  \vertex[particle] (photon) at (10,0) {};
+  \node[dot](center) [below right=1.5cm of photon] {};
+  \vertex (vertex) [below=.1cm of center] {$e_{i}^{2}$};
+  \node(proton) [below left=.5cm and 1.5cm of center] {};
+  \node(scatter) [right= 1cm of center] {};
+
+  \propag[pho] (photon) to (center);
+  \propag[fer] (proton) to (center);
+  \propag[fer] (center) to (scatter);
+\end{feynhand}

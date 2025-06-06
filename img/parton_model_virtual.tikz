@@ -1,0 +1,20 @@
+\begin{feynhand}
+  \vertex[particle] (photon) at (0,0) {$\gamma^{*}$};
+  \node[dot] (blob) [below right=1.5cm of photon] {};
+  \node[dot] (blob_up) [above=.1 of blob] {};
+  \node[dot] (blob_down) [below=.1 of blob] {};
+
+  \vertex[particle] (proton) [below left=.2cm and 2cm of blob] {$p$};
+  \node (quark_center) [right=1.5cm of blob] {};
+  \node (quark_above) [above right=.3cm and 1.5cm of blob_up] {};
+  \node (quark_below) [below right=.3cm and 1.5cm of blob_down] {};
+
+  \propag[pho] (photon) to [edge label=$q$] (blob);
+  \propag[fer] (proton) to [edge label=$p$] (blob);
+  \propag[fer] (blob) to (quark_center);
+  \propag[fer] (blob_up) to (quark_above);
+  \propag[fer] (blob_down) to (quark_below);
+
+  \filldraw[fill=black!30!white] to (blob) circle (.5cm);
+\end{feynhand}
+
