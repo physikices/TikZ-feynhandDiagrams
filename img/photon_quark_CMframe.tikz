@@ -1,0 +1,17 @@
+\begin{feynhand}
+  \node[] (center);
+  \vertex[particle] (virt_photon) [left=2cm of center] {$\gamma^{*}$};
+  \vertex[particle] (quark_1) [right=2cm of center] {$q_{1}$};
+  \vertex[particle] (quark_2) [above right=1.5cm and .3cm  of center] {$q_{2}$};
+  \vertex[particle] (gluon) [below left=1.5cm and .3cm  of center] {$g$};
+
+  \propag[pho] (virt_photon) to [edge label=$k$] (center);
+  \propag[fer] (quark_1) to [edge label=$p_{1}$] (center);
+  \propag[antfer] (quark_2) to [edge label'=$k^{\prime}$] (center);
+  \propag[glu] (gluon) to [edge label=$p_{g}$] (center);
+
+% draw angle %
+  \usetikzlibrary {angles,quotes}
+  \pic [draw, ->, "$\theta$", angle eccentricity=1.5] {angle = quark_1--center--quark_2};
+\end{feynhand}
+
