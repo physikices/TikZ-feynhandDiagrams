@@ -1,5 +1,3 @@
 \begin{feynhand}
-  \nood (root) at (0,0) {};
-  
+  \node (root) at (0,0) {};
 \end{feynhand}
-
